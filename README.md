@@ -17,3 +17,11 @@ This repository provides resources for re-creating the computational environment
 8. Open `dot-plots-axes.qmd` and press Render to generate `dot-plots-axes.pdf`
 
 Note: Computationally intensive statistical models have been saved in `dot-plots-axes_cache`. To speed-up rendering, these cached models are loaded instead of executing the code that generated them. To generate models from scratch, change the `eval_models` parameter in line 7 to `true`.
+
+In case of a Sementation Fault error, add the following code to the script and run rmarkdown::render("dot-plot-axes.qmd", output_file = "dot-plot-axes.pdf")
+
+```
+knitr::opts_chunk$set(
+  echo = FALSE, include = FALSE, warning = FALSE, message = FALSE
+)
+```
